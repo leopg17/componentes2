@@ -49,13 +49,25 @@ class HomePage extends StatelessWidget {
   }
 
   List<Widget> _listaItems(List<dynamic> data) {
-    return [
-      ListTile(title: Text('Hola Banano')),
-      Divider(),
-      ListTile(title: Text('Hola Piña')),
-      Divider(),
-      ListTile(title: Text('Hola Melón')),
-    ];
+    final List<Widget> opciones = [];
+
+    data.forEach((opt){
+
+      final widgetTemp = ListTile(
+        title: Text(opt['texto']),
+        leading: Icon(Icons.add_alert, color: Colors.blue,),
+        trailing: Icon(Icons.keyboard_arrow_right, color: Colors.blue),
+        onTap: (){
+
+        },
+      );
+
+      opciones..add(widgetTemp)
+              ..add(Divider());
+
+    });
+
+    return opciones;
 
   }
 }
