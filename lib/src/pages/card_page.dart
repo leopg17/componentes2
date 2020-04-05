@@ -11,7 +11,9 @@ class CardPage extends StatelessWidget {
       body: ListView(
         padding: EdgeInsets.all(10.0),
         children: <Widget>[
-          _cardTipo1()
+          _cardTipo1(),
+          SizedBox(height:30),
+          _cardTipo2(),
           ],
       ),
       
@@ -39,10 +41,35 @@ class CardPage extends StatelessWidget {
                 onPressed: (){},
               ),
             ],
-
           ),
         ],
       ),
     );
   }
+
+  Widget _cardTipo2(){
+    return Card(
+      child: Column(
+        children: <Widget>[
+
+          FadeInImage(
+            image: NetworkImage('https://pixabay.com/get/54e3dc454d57a814f6d1867dda35367b1d39dfe45b597741_1920.jpg'),
+            placeholder: AssetImage('assets/wait.gif'),
+            fadeInDuration: Duration( milliseconds:200),
+            height: 300.0,
+            fit: BoxFit.cover,
+          ),
+          // Image(
+          //   image: NetworkImage('https://pixabay.com/get/54e3dc454d57a814f6d1867dda35367b1d39dfe45b597741_1920.jpg'),
+          // ),
+          Container(
+            padding:EdgeInsets.all(10.0),
+            child: Text('Carbon'), 
+          )
+        ],
+      ),
+    );
+  }
+
 }
+

@@ -1,5 +1,4 @@
 
-import 'package:componentes2/src/pages/alert_page.dart';
 import 'package:componentes2/src/utils/icono_string_util.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
