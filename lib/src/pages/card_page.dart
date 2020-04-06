@@ -22,6 +22,8 @@ class CardPage extends StatelessWidget {
 
   Widget _cardTipo1(){
     return Card(
+      elevation: 10.0,
+      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10.0)),
       child: Column(
         children: <Widget>[
           ListTile(
@@ -48,12 +50,12 @@ class CardPage extends StatelessWidget {
   }
 
   Widget _cardTipo2(){
-    return Card(
+    final card = Container(
       child: Column(
         children: <Widget>[
 
           FadeInImage(
-            image: NetworkImage('https://pixabay.com/get/54e3dc454d57a814f6d1867dda35367b1d39dfe45b597741_1920.jpg'),
+            image: NetworkImage('https://cocineroaficionado.files.wordpress.com/2011/10/carbones.jpg?w=584'),
             placeholder: AssetImage('assets/wait.gif'),
             fadeInDuration: Duration( milliseconds:200),
             height: 300.0,
@@ -67,6 +69,24 @@ class CardPage extends StatelessWidget {
             child: Text('Carbon'), 
           )
         ],
+      ),
+    );
+
+    return Container(
+      decoration: BoxDecoration(
+        boxShadow: <BoxShadow>[
+          BoxShadow(
+            color: Colors.grey,
+            blurRadius: 10.0,
+          )
+        ],
+        borderRadius: BorderRadius.circular(30.0),
+        //color: Colors.red
+      ),
+      child: ClipRRect(
+        borderRadius: BorderRadius.circular(30.0),
+        child: card,
+
       ),
     );
   }

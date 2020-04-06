@@ -1,8 +1,8 @@
 
-import 'package:componentes2/src/utils/icono_string_util.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/cupertino.dart';
 
+import 'package:componentes2/src/utils/icono_string_util.dart';
 import 'package:componentes2/src/providers/menu_provider.dart';
 
 class HomePage extends StatelessWidget {
@@ -36,15 +36,8 @@ class HomePage extends StatelessWidget {
         return ListView(
           children: _listaItems(snapshot.data, context),
         );
-
       },
-
-
     );
-
-
-
-    
     /* return ListView(
       children: _listaItems(),
     ); */
@@ -60,13 +53,11 @@ class HomePage extends StatelessWidget {
         leading: getIcon(opt['icon']),
         trailing: Icon(Icons.keyboard_arrow_right, color: Colors.blue),
         onTap: (){
-
           /* final route = MaterialPageRoute(
             builder: (context) =>AlertPage()
           );
 
           Navigator.push(context, route); */
-
           Navigator.pushNamed(context, opt['ruta']);
 
         },
@@ -74,10 +65,7 @@ class HomePage extends StatelessWidget {
 
       opciones..add(widgetTemp)
               ..add(Divider());
-
     });
-
     return opciones;
-
   }
 }
